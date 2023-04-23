@@ -1,0 +1,14 @@
+{
+  "name": "progetto",
+  "version": "1.0.0",
+  "description": "Counter per il corso di JavaScript Basics",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Flora Tondino",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

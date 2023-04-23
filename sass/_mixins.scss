@@ -1,0 +1,56 @@
+@mixin buttonFeatures($color) {
+  background-color: $color;
+  box-shadow: inset 2px 3px 0px darken($color, 45%),
+    inset -1px 2px 0px darken($color, 45%),
+    inset 1px 4px 5px darken($color, 40%), inset 2px 1px 5px darken($color, 45%),
+    inset 3px 8px 8px darken($color, 10%),
+    inset 3px 8px 13px darken($color, 10%),
+    inset 7px 8px 1px lighten($color, 45%),
+    inset 8px 10px 2px lighten($color, 45%),
+    inset 6px 11px 2px lighten($color, 45%),
+    inset -3px 0px 4px darken($color, 30%),
+    inset 10px 12px 25px darken($color, 30%),
+    inset 28px 2px 42px darken($color, 30%),
+    inset -15px -6px 20px lighten($color, 30%),
+    inset -2px 3px 4px darken($color, 45%),
+    inset -1px 0px 3px darken($color, 45%),
+    inset 0px 8px 1px lighten($color, 40%), 5px 7px 11px rgba(0, 0, 0, 0.2);
+
+  &:active {
+    box-shadow: inset 2px 3px 0px darken($color, 45%),
+      inset -1px 2px 0px darken($color, 45%),
+      inset 1px 4px 5px darken($color, 40%),
+      inset 2px 1px 5px darken($color, 45%),
+      inset 8px 14px 12px darken($color, 9%),
+      inset 3px 8px 13px darken($color, 0%),
+      inset 7px 8px 1px darken($color, 45%),
+      inset 8px 1px 9px darken($color, 45%),
+      inset -2px -2px 2px darken($color, 45%),
+      inset -9px 1px 17px darken($color, 0%),
+      inset -62px -32px 21px darken($color, 24%),
+      inset 10px 12px 25px darken($color, 30%),
+      inset 28px 2px 42px darken($color, 30%),
+      inset -15px -6px 20px lighten($color, 30%),
+      inset -2px 3px 4px darken($color, 45%),
+      inset -1px 0px 3px darken($color, 45%),
+      inset 0px 8px 1px darken($color, 40%), 6px 1px 8px rgba(0, 0, 0, 0.25);
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-port {
+    @media (max-width: 934px) {
+      @content;
+    }
+  }
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
