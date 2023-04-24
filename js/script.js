@@ -1,27 +1,41 @@
-// Create HTML elements
+// Function to generate the elements
 
-const container = document.querySelector(".container");
-const btnContainer = document.querySelector(".btn-container");
-
-const displayValue = document.createElement("div");
-displayValue.classList.add("displayValue");
-displayValue.innerHTML = "<p class='counterValue'>0</p>";
-container.prepend(displayValue);
-
-const btn = function (element, className, content, where) {
+const elementGenerator = function (element, className, content, where) {
   const createElement = document.createElement(element);
   createElement.classList.add(className);
   createElement.innerHTML = content;
   where.append(createElement);
 };
 
+// Container and heading creation
+
+elementGenerator("div", "container", "", document.body);
+
+const container = document.querySelector(".container");
+
+elementGenerator("h1", "heading", "Retro counter", container);
+
+// Creation of the display and its value
+
+elementGenerator("div", "displayValue", "", container);
+
+const displayValue = document.querySelector(".displayValue");
+
+elementGenerator("p", "counterValue", "0", displayValue);
+
+// Buttons creation
+
+elementGenerator("div", "btn-container", "", container);
+
+const btnContainer = document.querySelector(".btn-container");
+
 for (let i = 0; i < 3; i++) {
-  btn("div", "btn", "", btnContainer);
+  elementGenerator("div", "btn", "", btnContainer);
 }
 
-btn("button", "decrease", "-", btnContainer.firstElementChild);
-btn("button", "reset", "Reset", btnContainer.childNodes[1]);
-btn("button", "increase", "+", btnContainer.lastElementChild);
+elementGenerator("button", "decrease", "-", btnContainer.firstElementChild);
+elementGenerator("button", "reset", "Reset", btnContainer.childNodes[1]);
+elementGenerator("button", "increase", "+", btnContainer.lastElementChild);
 
 // Counter functionality
 
